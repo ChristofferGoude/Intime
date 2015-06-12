@@ -1,0 +1,21 @@
+<%= form_for @task, :url => tasks_new_path, :html => {:method => :post} do |f| %>	
+	<div class="row">
+		<div class="col-md-12">
+			<div class="field form-group">
+			    <%= f.label :taskname %><br>
+			    <%= f.text_field :taskname, :class => "form-control" %>
+		  	</div>
+			<div class="field form-group">
+			    <%= f.label :description %><br>
+			    <%= f.text_area :description, :class => "form-control" %>
+		  	</div>
+	  	</div>
+  	</div>
+	<div class="row">
+		<div class="col-md-12">
+		  	<div class="actions">
+		    	<%= f.submit "Create Task", :class => "btn btn-default" %>
+		  	</div>	  	
+	  	</div>
+	</div>
+<% end %>

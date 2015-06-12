@@ -1,0 +1,77 @@
+// Bootstrap import
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// Custom CSS Code
+
+body{
+	overflow-y:scroll;
+}
+
+h1, h2, h3, h4, h5, p{
+  font-family:'Roboto', sans-serif;
+  color:#231f20;
+}
+
+h1{
+  font-weight:700;
+}
+
+h3{
+  font-weight:500;
+}
+
+p{
+  font-weight:400;
+}
+
+#newtask{}
+
+#task{
+  margin:10px 0 0 0;
+  display:none;
+}
+
+.menu a{
+  margin:18px 0 0 0;  
+}
+
+.menu{
+  background-color:#fff;
+  z-index:5;
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  padding:0 20px;
+}
+
+.content{
+  margin-top:100px;
+}
+
+.intime, .intime a, .intime:hover, .intime:visited, .intime:active{
+  text-decoration:none;
+  color:#231f20;
+}
+
+.extramargin{
+  margin:0 0 20px 0;
+}
+
+.stopwatch {
+  display: inline-block;
+  background-color: white;
+  border: 1px solid #eee;
+  padding: 5px;
+  margin: 5px;
+}
+.stopwatch span {
+  font-weight: bold;
+  display: block;
+}
+.stopwatch a {
+  padding-right: 5px;
+  text-decoration: none;
+}

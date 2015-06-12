@@ -1,0 +1,45 @@
+<%= render "partials/greeting" %>
+
+<div class="row">
+	<div class="col-md-12">
+		<h1><%= @project.projectname %></h1>
+		<h3>Tasks</h3>
+	</div>
+</div>
+	<% if @tasks.empty? %>
+		<div class="row">
+			<div class="col-md-12">
+				<p>You seem to have no tasks for this project yet! Why not create some and get productive?</p>
+			</div>
+		</div>
+	<% else %>
+		<% @tasks.each do |task|%>
+		<div class="row">
+			<div class="col-md-12">
+				<p><strong><%= task.taskname %></strong></p>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p><%= task.description %></p>
+			</div>
+		</div>
+		<div class="row extramargin">
+			<div class="col-md-12">
+				<%= link_to 'Start time', "#", {:class => "btn btn-primary", :id => ""} %>
+			</div>
+		</div>
+		<div class="stopwatch" id="<%= task.taskname %>"></div>
+		<% end %>
+	<% end %>
+
+<div class="row">
+	<div class="col-md-12 extramargin">
+		<%= link_to 'New task', "#", {:class => "btn btn-primary btn-block", :id => "newtask"} %>
+	</div>
+</div>
+<div class="row">
+	<div id="task" class="col-md-12">
+		<%= render "partials/task" %>
+	</div>
+</div>

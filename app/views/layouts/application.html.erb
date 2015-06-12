@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>intime</title>
+  
+  <!-- Google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+  
+  <!-- Rails application assets -->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="menu">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="pull-left"><%= link_to 'intime', root_url, {:class => "intime"} %></h3>
+			<div class="pull-right">				
+		    	<% if logged_in? %>
+		    			<%= link_to 'About', about_path, {:class => "btn btn-default"} %>
+			      		<%= link_to 'Logout', logout_path, {:class => "btn btn-default"} %>
+		      		<% else %>	
+						<%= link_to 'Register', register_path, {:class => "btn btn-default"} %>
+						<%= link_to 'Login', login_path, {:class => "btn btn-default"} %>
+		      	<% end %>
+	      	</div>
+      	</div>			
+	</div>
+</div>
+<div class="content">
+	<% flash.each do |key, value| %>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+			        <div class="<%= flash_class(key) %>" role="alert">
+			        	<button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="$('.alert').hide();"><span aria-hidden="true">&times;</span></button>
+			            <%= value %>
+			        </div>
+		        </div>
+	        </div>
+        </div>
+  	<% end %>
+  	<div class="container">
+		<%= yield %>
+  	</div>
+</div>
+</body>
+</html>
