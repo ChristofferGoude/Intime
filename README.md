@@ -12,3 +12,11 @@ Se till att följande gems finns med i gemfile:
 ### Bootstrap framework
 
 Följ installationsanvisningar för Bootstrap på: [Bootstrap Sass för Ruby on Rails](https://github.com/twbs/bootstrap-sass#a-ruby-on-rails)
+
+### Populera databasen
+
+Populera databasen med 'rake db:seed' i kommandoprompten.
+
+### Testa appen
+
+Testa appen genom att navigera till 'localhost:3000'
